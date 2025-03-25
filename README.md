@@ -3,4 +3,4 @@ This repository contains the configuration files for a ZMK keyboard using the ni
 
 ## Dependencies
 
-- zmk-nice-oled: A library for controlling the OLED display.
+- [zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled): A library for controlling the OLED display.
