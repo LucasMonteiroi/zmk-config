@@ -1,6 +1,51 @@
-name: Build ZMK firmware
-on: [push, pull_request, workflow_dispatch]
+name: Draw, Build and Package
+on:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+  pull_request:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+  workflow_dispatch:
 
 jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      commit_message: ":bento:: ${{ github.event.head_commit.message }}"
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      parse_args: ""
+      draw_args: ""
+
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+  package:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: firmware
+          pattern: firmware-*
+          merge-multiple: true
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: firmware/*
+          name: "Firmware build ${{ github.sha }}"
+          tag_name: build-${{ github.sha }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
