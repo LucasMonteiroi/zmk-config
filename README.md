@@ -12,7 +12,7 @@ This repository contains the configuration files for my Corne ZMK keyboard using
 My keyboard is a [corne-style split keyboard](https://github.com/foostan/crkbd) and I'm using the [zmk](https://zmk.dev/) firmware, made by: [@tupinikeebs](https://www.instagram.com/tupinikeebs/).
 
 | **Board**        | **Switches**    | **Keycaps**     | **Case**        | **Last Change**        |
-|--------------|-------------|-------------|-------------|
+|--------------|-------------|-------------|-------------|-------------|
 | Corne v2      | Akko Blue (45gf, tactile lubed )      | Cherry Black      | Void      | 27-03-2025      |
 
 <details>
