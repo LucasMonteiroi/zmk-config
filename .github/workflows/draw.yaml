@@ -1,6 +1,8 @@
 name: Draw Keymaps
 on:
+  workflow_dispatch:
   push:
+    branches: [master]
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
