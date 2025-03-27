@@ -1,11 +1,13 @@
 name: Draw, Build and Package
 on:
   push:
+    branches: [master]
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
   pull_request:
+    branches: [master]
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
