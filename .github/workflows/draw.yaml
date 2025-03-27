@@ -1,12 +1,11 @@
 name: Draw Keymaps
 on:
-  workflow_dispatch:
   push:
-    branches: [master]
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
+  pull_request:
 
 jobs:
   draw:
