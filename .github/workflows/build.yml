@@ -1,5 +1,6 @@
 name: Draw, Build and Package
 on:
+  workflow_dispatch:
   push:
     branches: [master]
     paths:
@@ -12,7 +13,6 @@ on:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
-  workflow_dispatch:
 
 jobs:
   draw:
