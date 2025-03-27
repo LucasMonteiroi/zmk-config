@@ -1,11 +1,12 @@
-name: Draw My Corne Keymaps
+name: Draw Keymaps
 on:
-  workflow_dispatch:
   push:
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   draw:
@@ -13,6 +14,7 @@ jobs:
     permissions:
       contents: write
     with:
+      commit_message: ":bento:: ${{ github.event.head_commit.message }}"
       keymap_patterns: "config/*.keymap"
       config_path: "keymap_drawer.config.yaml"
       output_folder: "keymap-drawer"
