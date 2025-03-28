@@ -27,6 +27,7 @@ My keyboard is a [corne-style split keyboard](https://github.com/foostan/crkbd) 
 </details>
 
 ### Corne Keymap
+
 > [!INFORMATION]
 >
 > Drawn with [@caksoylar's Keymap Drawer](https://github.com/caksoylar/keymap-drawer)
