@@ -28,8 +28,8 @@ layers:
   - {t: CAPSLOCK, h: LSHFT}
   - Z
   - X
-  - C
-  - V
+  - '&copy_behavior'
+  - '&paste_behavior'
   - B
   - N
   - M
