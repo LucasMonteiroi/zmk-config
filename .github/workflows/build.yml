@@ -8,6 +8,10 @@ jobs:
   package:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      discussions: write
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
