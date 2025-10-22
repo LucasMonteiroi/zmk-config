@@ -84,7 +84,7 @@ layers:
   - {type: held}
   - SPACE
   - RET
-  - {t: ▽, type: trans}
+  - MSE
   - LEFT ALT
   RAI:
   - TAB
@@ -129,3 +129,55 @@ layers:
   - RET
   - {type: held}
   - RALT
+  MSE:
+  - TAB
+  - {t: ▽, type: trans}
+  - '&msc SCRL_UP'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&msc SCRL_DOWN'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_UP'
+  - '&mmv MOVE_RIGHT'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LGUI
+  - {t: MSE, type: held}
+  - SPACE
+  - RET
+  - {type: held}
+  - RALT
+combos:
+- p: [1, 2]
+  k: ESCAPE
+- p: [24, 38]
+  k: '&caps_word'
+- p: [11, 23]
+  k: PAGE UP
+- p: [23, 35]
+  k: PAGE DOWN
