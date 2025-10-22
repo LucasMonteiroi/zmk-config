@@ -8,7 +8,7 @@ jobs:
   package:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
       - uses: actions/download-artifact@v4
@@ -21,8 +21,12 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: firmware/*
-          name: "Firmware build ${{ github.sha }}"
+          name: "ZMK Firmware - Corne (build ${{ github.sha }})"
           tag_name: build-${{ github.sha }}
+          body: |
+            Firmware automatically built for Corne with nice!nano v2.
+            - ✅ Left / Right halves included
+            - 🧠 Source: `${{ github.repository }}@${{ github.sha }}`
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
