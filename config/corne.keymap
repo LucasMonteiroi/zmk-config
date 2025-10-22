@@ -48,14 +48,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PASTE_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp K_PASTE>;
+            bindings = <&kp V>, <&kp LC(V)>;
         };
 
         copy_behavior: copy_behavior {
             compatible = "zmk,behavior-tap-dance";
             label = "COPY_BEHAVIOR";
             #binding-cells = <0>;
-            bindings = <&kp C>, <&kp K_COPY>;
+            bindings = <&kp C>, <&kp LC(C)>;
         };
     };
 
@@ -136,3 +136,4 @@
         };
     };
 };
+
